@@ -11,11 +11,11 @@ import java.util.List;
 @Dao
 public interface NoteDao {
 
-    @Query("SELECT * FROM note ORDER BY id DESC")
+    @Query("SELECT * FROM note")
     List<Note> getAllNotes();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void inserNote(Note note);
+    void insertNote(Note ... note);
 
     @Delete
     void deleteNote(Note note);
